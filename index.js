@@ -32,8 +32,8 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use('google-link', new GoogleStrategy({
-        clientID: '13910462142-vqn3shf5mebv4mcbtv3jmgbhh4u4av1d.apps.googleusercontent.com',
-        clientSecret: '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',
+        clientID: process.env.clientID,
+        clientSecret: process.env.clientSecret,
         callbackURL: "https://rcf-cc450a613e85.herokuapp.com/auth/google/callback"
     },
     function(accessToken, refreshToken, profile, done) {
@@ -49,8 +49,8 @@ passport.use('google-link', new GoogleStrategy({
 ));
 
 passport.use('google-login', new GoogleStrategy({
-        clientID: '13910462142-vqn3shf5mebv4mcbtv3jmgbhh4u4av1d.apps.googleusercontent.com',
-        clientSecret: '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',
+        clientID: process.env.clientID,
+        clientSecret: process.env.clientSecret,
         callbackURL: "https://rcf-cc450a613e85.herokuapp.com/auth/googleLogin/callback"
         // additional configuration...
 },  function(accessToken, refreshToken, profile, done) {
